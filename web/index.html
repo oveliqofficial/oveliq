@@ -3,100 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oveliq | Future of Privacy</title>
+    <title>Oveliq | Privacy at the core</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="cursor-glow" id="glow"></div>
-    
-    <header class="navbar">
-        <div class="container nav-flex">
+    <nav>
+        <div class="container navbar">
             <div class="logo">OVELIQ</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#specs">Specs</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </nav>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#ecosystem">Ecosystem</a>
+                <a href="https://discord.gg/SypXW72qQu" target="_blank">Discord</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="container">
+            <h1 class="hero-title">Oveliq</h1>
+            <p class="hero-subtitle">Privacy at the core. Speed in every pixel.</p>
+            <div class="hero-btns">
+                <a href="#ecosystem" class="btn-secondary">Explore Ecosystem</a>
+                <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="btn-main">Download OS</a>
+            </div>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1 class="premium-text">Oveliq</h1>
-            <p class="hero-subtext">Privacy at the core. Speed in every pixel.</p>
-            <div class="hero-btns">
-                <button class="main-cta-btn" id="exploreBtn">Explore Ecosystem</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="specs" class="specs-section">
+    <section id="ecosystem" class="ecosystem">
         <div class="container">
             <h2 class="section-title">Core Ecosystem</h2>
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <div class="css-icon">KERNEL</div> 
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <span class="card-tag">KERNEL</span>
                     <h3>Oveliq Kernel</h3>
-                    <p>Native ARM64 optimization for ultimate performance.</p>
-                    <a href="https://github.com/oveliq" target="_blank" class="github-link">GitHub Repo ></a>
+                    <p>Native x86_64 optimization for ultimate hardware performance.</p>
+                    <a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="repo-link">GitHub Repo ></a>
                 </div>
-                <div class="spec-card">
-                    <div class="css-icon">SEC</div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <span class="card-tag">SEC</span>
                     <h3>Security Hub</h3>
-                    <p>Quantum-safe encryption for your personal data.</p>
-                    <a href="https://github.com/oveliq" target="_blank" class="github-link">GitHub Repo ></a>
+                    <p>Advanced encryption protocols for your personal data protection.</p>
+                    <a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="repo-link">GitHub Repo ></a>
                 </div>
-                <div class="spec-card">
-                    <div class="css-icon">WEB</div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <span class="card-tag">WEB</span>
                     <h3>Oveliq Browser</h3>
-                    <p>Fast, secure, and completely tracker-free.</p>
-                    <a href="https://github.com/oveliq" target="_blank" class="github-link">GitHub Repo ></a>
+                    <p>Fast, secure, and completely tracker-free browsing experience.</p>
+                    <a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="repo-link">GitHub Repo ></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Support & FAQ</h2>
-            <div class="faq-item">
-                <button class="faq-question">How to install Oveliq?</button>
-                <div class="faq-answer">
-                    <p>Download the latest build from our GitHub repository or join our Discord for community support.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Is it Open Source?</button>
-                <div class="faq-answer">
-                    <p>Yes, Oveliq is fully open-source and respects your digital freedom.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="mega-footer">
+    <footer class="footer">
         <div class="container footer-grid">
-            <div class="footer-col">
+            <div class="footer-info">
                 <h3>Oveliq Systems</h3>
                 <p>Engineering a safer digital future.</p>
             </div>
-            <div class="footer-col">
+            <div class="footer-links">
                 <h4>Code</h4>
-                <a href="https://github.com/oveliq" target="_blank">GitHub</a>
+                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">GitHub</a>
                 <a href="#">Documentation</a>
             </div>
-            <div class="footer-col">
+            <div class="footer-links">
                 <h4>Community</h4>
                 <a href="https://discord.gg/SypXW72qQu" target="_blank">Discord Server</a>
-                <a href="https://t.me/oveliqofficial" target="_blank">Telegram Channel</a>
+                <a href="#">Telegram</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Oveliq Engineering. All rights reserved.</p>
-        </div>
+        <p class="copyright">© 2026 Oveliq Engineering. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
