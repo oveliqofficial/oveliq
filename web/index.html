@@ -3,64 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oveliq OS | Download Center</title>
+    <title>Oveliq OS | Official Site</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <nav>
         <div class="container navbar">
-            <h1 class="logo">🌑 OVELIQ</h1>
-            <nav>
-                <a href="#download">Download</a>
+            <div class="logo">OVELIQ<span>OS</span></div>
+            <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">Source</a>
-            </nav>
+                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">GitHub</a>
+                <a href="#download" class="nav-btn">Download Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>The Future of Privacy is <span>Oveliq</span>.</h1>
+            <p>A high-performance, secure operating system built from the ground up. Small in size, massive in security.</p>
+            <div id="download" class="download-box">
+                <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="main-download-btn">
+                    <i class="fas fa-shield-halved"></i>
+                    <div class="text">
+                        <span class="big">Download Oveliq OS</span>
+                        <span class="small">Version 1.0.0 Alpha | x86_64</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <section id="download" class="hero-section">
-            <div class="hero-content">
-                <span class="badge">Alpha Release v1.0.0</span>
-                <h2>Experience True Digital Freedom.</h2>
-                <p>Oveliq is a next-generation, open-source operating system focused on privacy and raw performance. Download the core kernel today.</p>
-                
-                <div class="download-container">
-                    <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="download-btn">
-                        <i class="fas fa-download"></i>
-                        <div class="btn-text">
-                            <span class="top-text">Download Oveliq Core</span>
-                            <span class="bottom-text">Platform: x86_64 (.bin, 512B)</span>
-                        </div>
-                    </a>
+    <section id="features" class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Assembly Core</h3>
+                    <p>Written in low-level Assembly for maximum hardware performance.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Privacy First</h3>
+                    <p>No tracking. No data collection. Just your code and your rules.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Boot</h3>
+                    <p>Boots in less than a second thanks to optimized kernel logic.</p>
                 </div>
             </div>
-        </section>
-
-        <section class="demo-section">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="title">oveliq_kernel_live_boot</span>
-                </div>
-                <div class="terminal-body" id="terminal-content">
-                    <p class="bot-msg">> Loading Oveliq...</p>
-                    <p class="bot-msg">> System ready. Welcome, Operator Zantal.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
             <p>&copy; 2026 Oveliq Engineering. Developed by Zantal.</p>
-            <div class="social-links">
-                <a href="https://discord.gg/SypXW72qQu" target="_blank"><i class="fab fa-discord"></i></a>
-                <a href="https://t.me/oveliqofficial" target="_blank"><i class="fab fa-telegram"></i></a>
-            </div>
         </div>
     </footer>
 
