@@ -1,25 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Smooth Scroll for Hero Button
-    document.getElementById('exploreBtn').addEventListener('click', () => {
-        document.getElementById('specs').scrollIntoView({ behavior: 'smooth' });
-    });
+    // 1. Анімація появи карток при скролі (Intersection Observer)
+    const cards = document.querySelectorAll('.card');
+    const observerOptions = {
+        threshold: 0.1 // Спрацює, коли 10% карти видно
+    };
 
-    // 2. Cursor Glow Follow
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', (e) => {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
-    });
-
-    // 3. FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        item.querySelector('.faq-question').addEventListener('click', () => {
-            faqItems.forEach(i => { if (i !== item) i.classList.remove('active'); });
-            item.classList.toggle('active');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
     });
 
-    // 4. Console Watermark
-    console.log("%c Oveliq Systems %c Active ", "color: #fff; background: #0078d4; padding: 5px; font-weight: bold;", "color: #fff; background: #333; padding: 5px;");
+    // 2. Ватермарк у консолі (залишаємо твою фішку)
+    console.log(
+        "%c Oveliq OS ", 
+        "color: white; background: black; padding: 5px 10px; border-radius: 3px; font-weight: bold; font-size: 1.2em;"
+    );
+    console.log("Status: Operational");
 });
