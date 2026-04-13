@@ -1,49 +1,157 @@
+/* Основні налаштування */
+:root {
+    --bg-color: #050505;
+    --text-color: #e0e0e0;
+    --primary-color: #00ffcc; /* Неоновий бірюзовий */
+    --accent-color: #00ccff;
+    --terminal-bg: #000;
+    --font-main: 'Courier New', Courier, monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #050505;
-    color: #e0e0e0;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 .container {
-    width: 80%;
-    max-width: 1000px;
+    width: 90%;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
+/* Навігація */
 header {
-    background: linear-gradient(180deg, #001a33 0%, #050505 100%);
-    text-align: center;
-    padding: 40px 0;
-    border-bottom: 2px solid #00ffff;
+    background-color: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid #222;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-h1 {
-    color: #00ffff;
-    font-size: 3em;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 1.8em;
     margin: 0;
-    text-shadow: 0 0 10px #00ffff;
+    text-shadow: 0 0 10px var(--primary-color);
 }
 
-.tagline {
+nav a {
     color: #888;
-    font-size: 1.2em;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+    font-size: 0.9em;
 }
 
-.about h2 {
-    color: #00ffcc;
+nav a:hover {
+    color: #fff;
 }
 
-/* Стилізація терміналу */
+/* Головна секція (Hero) */
+.hero-section {
+    padding: 150px 0 80px 0; /* Відступ через фіксований хедер */
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(0, 255, 204, 0.1);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    color: #fff;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    color: #999;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+/* Кнопка Завантаження */
+.download-container {
+    margin: 40px 0;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 18px 45px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+}
+
+.download-btn i {
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+.download-btn .btn-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.download-btn .top-text {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.download-btn .bottom-text {
+    font-size: 0.7em;
+    opacity: 0.7;
+}
+
+.download-btn:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+}
+
+/* Секція Демо */
+.demo-section {
+    padding: 50px 0;
+}
+
 .terminal-window {
-    background-color: #000;
+    background-color: var(--terminal-bg);
     border: 1px solid #333;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
     overflow: hidden;
-    margin-top: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .terminal-header {
@@ -67,53 +175,41 @@ h1 {
 
 .title {
     color: #999;
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin-left: 10px;
 }
 
 .terminal-body {
     padding: 20px;
-    height: 300px;
-    overflow-y: auto;
-    color: #00ff00;
+    color: var(--primary-color);
     font-size: 0.9em;
+    height: 200px;
+    overflow-y: auto;
 }
 
 .bot-msg { margin: 0 0 8px 0; }
-.user-cmd { color: #00ffff; margin: 0 0 8px 0; }
-.error-msg { color: #ff5f56; margin: 0 0 8px 0; }
 
-.terminal-input-line {
-    display: flex;
-    padding: 10px 20px;
-    background-color: #0a0a0a;
-    border-top: 1px solid #333;
-}
-
-.prompt {
-    color: #00ffff;
-    margin-right: 10px;
-}
-
-#terminal-input {
-    background: transparent;
-    border: none;
-    color: #00ff00;
-    font-family: inherit;
-    font-size: inherit;
-    width: 100%;
-    outline: none;
-}
-
+/* Футер */
 footer {
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 0;
     color: #555;
     border-top: 1px solid #222;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
-footer a {
-    color: #00ffff;
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #555;
     text-decoration: none;
+    font-size: 1.5em;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
 }
