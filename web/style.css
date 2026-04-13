@@ -1,25 +1,16 @@
-/* Основні налаштування */
-:root {
-    --bg-black: #000000;
-    --card-bg: #0a0a0a;
-    --text-white: #ffffff;
-    --text-gray: #888888;
-    --accent: #ffffff;
-    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth; /* Плавний скрол */
+/* 1. Скидання стандартних налаштувань (щоб не було "крапок" і лишніх відступів) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-stack);
-    background-color: var(--bg-black);
-    color: var(--text-white);
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased; /* Робить шрифт чіткішим */
 }
 
 .container {
@@ -28,70 +19,73 @@ body {
     padding: 0 20px;
 }
 
-/* Навігація */
+/* 2. Навігація (тепер вона буде в ряд, як на відео) */
 nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid #1a1a1a;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
-    height: 80px;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
+.nav-links {
+    display: flex;
+    list-style: none; /* ПРИБИРАЄ КРАПКИ */
+    gap: 30px;
+}
+
 .nav-links a {
-    color: var(--text-gray);
+    color: #888;
     text-decoration: none;
-    margin-left: 30px;
     font-size: 14px;
     transition: 0.3s;
 }
 
-.nav-links a:hover { color: #fff; }
+.nav-links a:hover {
+    color: #fff;
+}
 
-/* Hero Section */
+/* 3. Hero секція (Величезний заголовок Oveliq) */
 .hero {
+    padding: 120px 0;
     text-align: center;
-    padding: 150px 0;
     background: radial-gradient(circle at center, #111 0%, #000 70%);
 }
 
 .hero-title {
-    font-size: 120px;
-    margin: 0;
+    font-size: clamp(60px, 10vw, 120px); /* Адаптивний розмір */
     font-weight: 800;
     letter-spacing: -5px;
-    line-height: 1;
+    margin-bottom: 10px;
 }
 
 .hero-subtitle {
-    color: var(--text-gray);
-    font-size: 20px;
-    margin: 20px 0 50px 0;
-    font-weight: 300;
+    color: #888;
+    font-size: 18px;
+    margin-bottom: 40px;
 }
 
-.hero-btns {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
+/* Кнопки */
 .btn-main {
     display: inline-block;
-    padding: 15px 40px;
+    padding: 14px 35px;
     background: #fff;
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
@@ -100,24 +94,16 @@ nav {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-.btn-secondary {
-    display: inline-block;
-    padding: 15px 40px;
-    border: 1px solid #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
+/* 4. Секція з картками (Core Ecosystem) */
+.ecosystem {
+    padding: 80px 0;
 }
 
-.btn-secondary:hover {
-    border-color: #555;
-    background-color: rgba(255, 255, 255, 0.05);
+.section-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+    text-align: center;
 }
-
-/* Секція Карт */
-.ecosystem { padding: 100px 0; }
-.section-title { font-size: 40px; text-align: center; margin-bottom: 80px; font-weight: 700; }
 
 .grid {
     display: grid;
@@ -126,56 +112,51 @@ nav {
 }
 
 .card {
-    background: var(--card-bg);
+    background: #0a0a0a;
     padding: 40px;
     border: 1px solid #1a1a1a;
-    border-radius: 10px;
-    transition: 0.3s ease-out;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.card:hover { border-color: #333; transform: translateY(-5px); }
-
-.card-icon {
-    font-size: 30px;
-    color: var(--text-white);
-    margin-bottom: 25px;
+.card:hover {
+    border-color: #333;
+    transform: translateY(-5px);
 }
 
 .card-tag {
     font-size: 10px;
-    border: 1px solid var(--text-gray);
+    color: #888;
+    border: 1px solid #333;
     padding: 2px 8px;
-    color: var(--text-gray);
     display: inline-block;
-    margin-bottom: 20px;
-    border-radius: 3px;
+    margin-bottom: 15px;
+    border-radius: 4px;
 }
 
-.card h3 { font-size: 24px; margin: 0 0 15px 0; font-weight: 600; }
-.card p { color: var(--text-gray); line-height: 1.6; margin: 0 0 25px 0; font-weight: 300; font-size: 15px; }
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
 
 .repo-link {
-    color: var(--text-white);
+    color: #fff;
     text-decoration: none;
-    font-size: 14px;
     font-weight: bold;
+    font-size: 14px;
 }
 
-/* Футер */
-.footer {
-    padding: 80px 0 40px 0;
+/* 5. Футер */
+footer {
+    padding: 60px 0;
     border-top: 1px solid #1a1a1a;
-    background-color: #050505;
+    text-align: center;
+    color: #444;
+    font-size: 12px;
 }
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-}
-
-.footer-links h4 { margin: 0 0 20px 0; font-size: 14px; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; }
-.footer-links a { display: block; color: var(--text-white); text-decoration: none; margin-bottom: 12px; font-size: 14px; transition: 0.2s; }
-.footer-links a:hover { color: var(--text-gray); }
-
-.copyright { text-align: center; color: #333; margin-top: 80px; font-size: 12px; }
