@@ -1,22 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth Scroll for Button
-    document.getElementById('exploreBtn').addEventListener('click', () => {
-        document.getElementById('specs').scrollIntoView({ behavior: 'smooth' });
-    });
+const input = document.getElementById('terminal-input');
+const content = document.getElementById('terminal-content');
 
-    // Mouse Glow
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', (e) => {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
-    });
+// Функція для додавання нового рядка в термінал
+function addLog(text, type = 'bot-msg') {
+    const p = document.createElement('p');
+    p.textContent = text;
+    p.className = type;
+    content.appendChild(p);
+    // Автоматична прокрутка вниз
+    content.scrollTop = content.scrollHeight;
+}
 
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        item.querySelector('.faq-question').addEventListener('click', () => {
-            faqItems.forEach(i => { if (i !== item) i.classList.remove('active'); });
-            item.classList.toggle('active');
-        });
-    });
+// Функція обробки команд
+function processCommand(cmd) {
+    const cleanCmd = cmd.toLowerCase().trim();
+    
+    // Ехо команди користувача
+    addLog(`> ${cmd}`, 'user-cmd');
+
+    if (cleanCmd === 'help') {
+        addLog('Доступні команди: about, status, contact, clear');
+    } else if (cleanCmd === 'about') {
+        addLog('Oveliq Systems — проект з розробки захищеної екосистеми.');
+    } else if (cleanCmd === 'status') {
+        addLog('Oveliq Network: ONLINE | Core v2.1.0: Active');
+    } else if (cleanCmd === 'contact') {
+        addLog('Приєднуйтесь до нашого Discord: discord.gg/SypXW72qQu');
+    } else if (cleanCmd === 'clear') {
+        content.innerHTML = ''; // Очистити консоль
+        addLog('Terminal cleared. Oveliq Console v2.0', 'bot-msg');
+    } else if (cleanCmd === '') {
+        // Нічого не робити
+    } else {
+        addLog(`Помилка: Команда '${cleanCmd}' не знайдена. Спробуйте 'help'.`, 'error-msg');
+    }
+}
+
+// Слухач натискання клавіш
+input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        const command = input.value;
+        processCommand(command);
+        input.value = ''; // Очистити поле вводу
+    }
 });
