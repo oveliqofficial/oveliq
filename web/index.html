@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oveliq | Privacy at the core</title>
+    <title>Oveliq | Official System Portal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,24 +11,33 @@
     <nav>
         <div class="container navbar">
             <div class="logo">OVELIQ</div>
-            <div class="nav-links">
-                <a href="#hero">Home</a>
-                <a href="#ecosystem">Ecosystem</a>
-                <a href="https://discord.gg/SypXW72qQu" target="_blank">Discord</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#ecosystem">Ecosystem</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="nav-btn">Source Code</a></li>
+            </ul>
         </div>
     </nav>
 
     <header id="hero" class="hero">
         <div class="container">
             <h1 class="hero-title">Oveliq</h1>
-            <p class="hero-subtitle">Privacy at the core. Speed in every pixel.</p>
+            <p class="hero-subtitle">Privacy at the core. Speed in every pixel. Pure Assembly.</p>
             <div class="hero-btns">
-                <a href="#ecosystem" class="btn-secondary">Explore Ecosystem</a>
-                <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="btn-main">Download OS</a>
+                <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="btn-main">Download OS (Alpha)</a>
+                <a href="#roadmap" class="btn-secondary">View Roadmap</a>
             </div>
         </div>
     </header>
+
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item"><h3>512B</h3><p>Kernel Size</p></div>
+            <div class="stat-item"><h3>0.8s</h3><p>Boot Time</p></div>
+            <div class="stat-item"><h3>100%</h3><p>Open Source</p></div>
+        </div>
+    </section>
 
     <section id="ecosystem" class="ecosystem">
         <div class="container">
@@ -38,23 +47,27 @@
                     <div class="card-icon"><i class="fas fa-microchip"></i></div>
                     <span class="card-tag">KERNEL</span>
                     <h3>Oveliq Kernel</h3>
-                    <p>Native x86_64 optimization for ultimate hardware performance.</p>
-                    <a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="repo-link">GitHub Repo ></a>
+                    <p>Written in x86 Assembly. Direct hardware communication without overhead.</p>
+                    <a href="https://github.com/oveliqofficial/oveliq" class="repo-link">View Kernel ></a>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
-                    <span class="card-tag">SEC</span>
-                    <h3>Security Hub</h3>
-                    <p>Advanced encryption protocols for your personal data protection.</p>
-                    <a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="repo-link">GitHub Repo ></a>
+                    <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                    <span class="card-tag">PRIVACY</span>
+                    <h3>Zero-Trace Policy</h3>
+                    <p>Every byte of your data stays on your machine. No telemetry, ever.</p>
+                    <a href="#" class="repo-link">Privacy Whitepaper ></a>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-globe"></i></div>
-                    <span class="card-tag">WEB</span>
-                    <h3>Oveliq Browser</h3>
-                    <p>Fast, secure, and completely tracker-free browsing experience.</p>
-                    <a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="repo-link">GitHub Repo ></a>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <h2 class="section-title">Development Roadmap</h2>
+            <div class="roadmap-list">
+                <div class="road-item done"><h4>Phase 1: Bootloader</h4><p>Completed: x16 Real Mode boot and kernel loading.</p></div>
+                <div class="road-item active"><h4>Phase 2: GUI Core</h4><p>In Progress: Developing custom VESA graphics drivers.</p></div>
+                <div class="road-item future"><h4>Phase 3: Network</h4><p>Planned: Basic TCP/IP stack for Oveliq Browser.</p></div>
             </div>
         </div>
     </section>
@@ -67,13 +80,13 @@
             </div>
             <div class="footer-links">
                 <h4>Code</h4>
-                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">GitHub</a>
+                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">GitHub Repo</a>
                 <a href="#">Documentation</a>
             </div>
             <div class="footer-links">
                 <h4>Community</h4>
                 <a href="https://discord.gg/SypXW72qQu" target="_blank">Discord Server</a>
-                <a href="#">Telegram</a>
+                <a href="https://t.me/oveliqofficial" target="_blank">Telegram Channel</a>
             </div>
         </div>
         <p class="copyright">© 2026 Oveliq Engineering. All rights reserved.</p>
