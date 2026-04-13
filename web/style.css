@@ -3,13 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none !important; /* ВБИВАЄ СИНІ ПІДКРЕСЛЕННЯ */
+    text-decoration: none !important; /* ВБИВАЄ СИНІЙ КОЛІР */
 }
 
 body {
     background-color: #000;
     color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, sans-serif;
 }
 
 .container {
@@ -30,13 +30,10 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    align-items: center;
 }
 
 .logo { font-size: 20px; font-weight: 900; letter-spacing: 2px; }
-
-.nav-links { list-style: none; display: flex; gap: 25px; }
-
+.nav-links { list-style: none; display: flex; gap: 25px; align-items: center; }
 .nav-links a { color: #555; font-size: 14px; transition: 0.3s; }
 .nav-links a:hover { color: #fff; }
 
@@ -45,12 +42,12 @@ nav {
 .hero-title { font-size: clamp(70px, 15vw, 150px); font-weight: 900; letter-spacing: -7px; }
 .hero-subtitle { color: #888; margin: 20px 0 40px; font-size: 18px; }
 
-/* КНОПКИ БЕЗ СИНЬОГО */
+/* BUTTONS */
 .btn-main {
     background: #fff;
-    color: #000 !important; /* ЗАВЖДИ ЧОРНИЙ */
-    padding: 15px 40px;
-    border-radius: 8px;
+    color: #000 !important;
+    padding: 16px 45px;
+    border-radius: 10px;
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -62,18 +59,11 @@ nav {
     color: #fff !important;
     padding: 15px 40px;
     border: 1px solid #222;
-    border-radius: 8px;
-    margin-left: 10px;
+    border-radius: 10px;
+    margin-left: 15px;
 }
 
-/* FEATURES EXTRA */
-.features-extra { padding: 50px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; }
-.feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
-.feat-item i { font-size: 25px; margin-bottom: 15px; color: #333; }
-.feat-item h4 { margin-bottom: 10px; }
-.feat-item p { color: #555; font-size: 13px; }
-
-/* MODAL (ВІКНО ВИБОРУ) */
+/* MODAL */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -81,49 +71,47 @@ nav {
     width: 100%; height: 100%;
     background: rgba(0,0,0,0.95);
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .modal-box {
     background: #0a0a0a;
     width: 90%;
-    max-width: 450px;
+    max-width: 400px;
     margin: 150px auto;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 24px;
     border: 1px solid #222;
+    text-align: center;
 }
 
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
-}
-
-.close-btn { background: none; border: none; color: #555; font-size: 24px; cursor: pointer; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.close-x { background: none; border: none; color: #444; font-size: 30px; cursor: pointer; }
 
 .modal-options { display: flex; flex-direction: column; gap: 15px; }
 
 .opt-card {
     background: #111;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     border: 1px solid #222;
-    color: #fff !important; /* ВБИВАЄ СИНІЙ ТЕКСТ */
+    color: #fff !important;
     transition: 0.3s;
 }
 
-.opt-card:hover { background: #fff; color: #000 !important; }
-.opt-card i { font-size: 24px; }
-.opt-text strong { display: block; font-size: 16px; }
-.opt-text span { font-size: 12px; opacity: 0.6; }
+.opt-card:hover { border-color: #fff; background: #1a1a1a; }
+.opt-card i { font-size: 24px; color: #444; }
+.opt-info { text-align: left; }
+.opt-info p { font-size: 12px; color: #555; }
 
-/* ECOSYSTEM */
-.ecosystem { padding: 100px 0; text-align: center; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 50px; }
-.card { background: #0a0a0a; border: 1px solid #111; padding: 40px; border-radius: 15px; }
-.card-tag { font-size: 10px; color: #333; border: 1px solid #111; padding: 2px 6px; }
+/* FEATURES */
+.grid-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 60px 0; }
+.f-card { background: #050505; padding: 30px; border-radius: 15px; border: 1px solid #111; text-align: center; }
+.f-card i { font-size: 25px; color: #222; margin-bottom: 15px; }
+.f-card h3 { font-size: 18px; margin-bottom: 10px; }
+.f-card p { color: #444; font-size: 14px; }
 
-footer { padding: 50px 0; text-align: center; color: #222; font-size: 12px; border-top: 1px solid #111; }
+footer { padding: 40px 0; text-align: center; color: #1a1a1a; font-size: 12px; }
