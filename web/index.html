@@ -1,41 +1,54 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oveliq Systems | Digital Freedom</title>
+    <title>Oveliq OS | Download Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>🌑 OVELIQ SYSTEMS</h1>
-            <p class="tagline">Engineering the Future of Privacy</p>
+        <div class="container navbar">
+            <h1 class="logo">🌑 OVELIQ</h1>
+            <nav>
+                <a href="#download">Download</a>
+                <a href="#features">Features</a>
+                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">Source</a>
+            </nav>
         </div>
     </header>
 
     <main class="container">
-        <section class="about">
-            <h2>Про проект</h2>
-            <p>Oveliq — це екосистема наступного покоління, створена для забезпечення цифрової свободи, швидкості та безпеки. Ми будуємо закрите середовище для захисту ваших даних.</p>
+        <section id="download" class="hero-section">
+            <div class="hero-content">
+                <span class="badge">Alpha Release v1.0.0</span>
+                <h2>Experience True Digital Freedom.</h2>
+                <p>Oveliq is a next-generation, open-source operating system focused on privacy and raw performance. Download the core kernel today.</p>
+                
+                <div class="download-container">
+                    <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        <div class="btn-text">
+                            <span class="top-text">Download Oveliq Core</span>
+                            <span class="bottom-text">Platform: x86_64 (.bin, 512B)</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section class="terminal-section">
+        <section class="demo-section">
             <div class="terminal-window">
                 <div class="terminal-header">
                     <span class="dot red"></span>
                     <span class="dot yellow"></span>
                     <span class="dot green"></span>
-                    <span class="title">Oveliq Live Console v2.0</span>
+                    <span class="title">oveliq_kernel_live_boot</span>
                 </div>
                 <div class="terminal-body" id="terminal-content">
-                    <p class="bot-msg">> system boot_sequence... [ OK ]</p>
-                    <p class="bot-msg">> network bridge... [ ONLINE ]</p>
-                    <p class="bot-msg">> Type 'help' to start.</p>
-                </div>
-                <div class="terminal-input-line">
-                    <span class="prompt">oveliq@guest:~$</span>
-                    <input type="text" id="terminal-input" autofocus>
+                    <p class="bot-msg">> Loading Oveliq...</p>
+                    <p class="bot-msg">> System ready. Welcome, Operator Zantal.</p>
                 </div>
             </div>
         </section>
@@ -43,10 +56,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Oveliq Engineering. All rights reserved.</p>
-            <div class="links">
-                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">GitHub</a> | 
-                <a href="https://discord.gg/SypXW72qQu" target="_blank">Discord</a>
+            <p>&copy; 2026 Oveliq Engineering. Developed by Zantal.</p>
+            <div class="social-links">
+                <a href="https://discord.gg/SypXW72qQu" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://t.me/oveliqofficial" target="_blank"><i class="fab fa-telegram"></i></a>
             </div>
         </div>
     </footer>
