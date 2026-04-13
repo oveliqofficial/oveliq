@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oveliq | Official Source</title>
+    <title>Oveliq | Official Gateway</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <nav>
         <div class="container navbar">
             <div class="logo">OVELIQ</div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#ecosystem">Ecosystem</a></li>
-                <li><a href="#specs">Specs</a></li>
+                <li><a href="https://t.me/oveliqofficial" target="_blank">Telegram</a></li>
                 <li><a href="https://github.com/oveliqofficial/oveliq" target="_blank" class="nav-btn">GitHub</a></li>
             </ul>
         </div>
@@ -23,46 +24,31 @@
     <header id="hero" class="hero">
         <div class="container">
             <h1 class="hero-title">Oveliq</h1>
-            <p class="hero-subtitle">High-performance Assembly OS kernel. Lightweight. Secure. Fast.</p>
+            <p class="hero-subtitle">Next-gen low-level operating system. Pure Assembly power.</p>
             <div class="hero-btns">
-                <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="btn-main">Download Core</a>
-                <a href="https://t.me/oveliqofficial" class="btn-secondary" target="_blank">Join Telegram</a>
+                <button class="btn-main" onclick="openModal()">Get Oveliq</button>
+                <a href="#ecosystem" class="btn-secondary">Explore OS</a>
             </div>
         </div>
     </header>
 
-    <section id="specs" class="specs">
+    <section class="features-extra">
         <div class="container">
-            <h2 class="section-title">System Specs</h2>
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <i class="fas fa-microchip"></i>
-                    <h4>Architecture</h4>
-                    <p>x86_64 / x86</p>
+            <div class="feat-grid">
+                <div class="feat-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Ultra Fast</h4>
+                    <p>Boots in milliseconds directly from the bootsector.</p>
                 </div>
-                <div class="spec-card">
-                    <i class="fas fa-memory"></i>
-                    <h4>Min RAM</h4>
-                    <p>1 MB (Real Mode)</p>
+                <div class="feat-item">
+                    <i class="fas fa-code"></i>
+                    <h4>Clean Code</h4>
+                    <p>No bloated libraries. Only essential Assembly instructions.</p>
                 </div>
-                <div class="spec-card">
-                    <i class="fas fa-hard-drive"></i>
-                    <h4>Binary Size</h4>
-                    <p>512 Bytes (Sector 0)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="code-box">
-        <div class="container">
-            <div class="terminal">
-                <div class="t-head"><span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span></div>
-                <div class="t-body">
-                    <p><span>[boot]</span> Loading kernel...</p>
-                    <p><span>[info]</span> Jumping to 0x7C00</p>
-                    <p><span>[done]</span> Oveliq OS v1.0 is active.</p>
-                    <p class="cursor">_</p>
+                <div class="feat-item">
+                    <i class="fas fa-user-secret"></i>
+                    <h4>Ghost Mode</h4>
+                    <p>Zero tracking. Total privacy for the end user.</p>
                 </div>
             </div>
         </div>
@@ -75,32 +61,46 @@
                 <div class="card">
                     <span class="card-tag">OS</span>
                     <h3>Oveliq Kernel</h3>
-                    <p>The heart of the system. Pure Assembly logic.</p>
+                    <p>The main binary for x86 architecture.</p>
                 </div>
                 <div class="card">
-                    <span class="card-tag">DEV</span>
-                    <h3>Tools.py</h3>
-                    <p>Automation framework for kernel building.</p>
-                </div>
-                <div class="card">
-                    <span class="card-tag">COMM</span>
-                    <h3>Community</h3>
-                    <p>Open for every developer who loves low-level.</p>
+                    <span class="card-tag">APP</span>
+                    <h3>Oveliq Tools</h3>
+                    <p>Python-based kits for mobile developers.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="f-brand">OVELIQ<span>ENGINEERING</span></div>
-            <div class="f-links">
-                <a href="https://t.me/oveliqofficial" target="_blank">Telegram</a>
-                <a href="https://discord.gg/SypXW72qQu" target="_blank">Discord</a>
-                <a href="https://github.com/oveliqofficial/oveliq" target="_blank">GitHub</a>
+    <div id="downloadModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Select Platform</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-options">
+                <a href="https://github.com/oveliqofficial/oveliq/raw/main/core/oveliq.bin" class="opt-card">
+                    <i class="fas fa-desktop"></i>
+                    <div class="opt-text">
+                        <strong>For Computer</strong>
+                        <span>Download .bin Kernel</span>
+                    </div>
+                </a>
+                <a href="https://github.com/oveliqofficial/oveliq/archive/refs/heads/main.zip" class="opt-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="opt-text">
+                        <strong>For Mobile</strong>
+                        <span>Download Mobile Kit</span>
+                    </div>
+                </a>
             </div>
         </div>
-        <p class="copy">© 2026 Zantal. Developed with passion.</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Oveliq Systems by Zantal. Join the revolution.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
