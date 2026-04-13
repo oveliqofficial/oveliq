@@ -1,17 +1,28 @@
-function openModal() {
-    document.getElementById("downloadModal").style.display = "block";
+// 1. Функція відкриття вікна
+function openDownloadModal() {
+    const modal = document.getElementById("downloadModal");
+    modal.style.display = "block";
+    // Додамо анімацію появи
+    modal.style.opacity = "0";
+    setTimeout(() => { modal.style.opacity = "1"; modal.style.transition = "0.3s"; }, 10);
 }
 
-function closeModal() {
-    document.getElementById("downloadModal").style.display = "none";
+// 2. Функція закриття вікна
+function closeDownloadModal() {
+    const modal = document.getElementById("downloadModal");
+    modal.style.display = "none";
 }
 
-// Закриття при кліку поза вікном
+// 3. Закривати вікно, якщо натиснути на темний фон поза ним
 window.onclick = function(event) {
-    let modal = document.getElementById("downloadModal");
+    const modal = document.getElementById("downloadModal");
     if (event.target == modal) {
-        modal.style.display = "none";
+        closeDownloadModal();
     }
 }
 
-console.log("%c Oveliq OS Portal Active ", "color: black; background: white; font-weight: bold;");
+// 4. console logo
+window.onload = () => {
+    console.log("%c OVELIQ ENGINEERING ", "background: #000; color: #fff; font-size: 20px; font-weight: bold; border: 1px solid #222; padding: 10px;");
+    console.log("Kernel: Operational (Alpha 1.0)");
+};
