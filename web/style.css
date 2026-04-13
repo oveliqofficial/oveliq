@@ -1,215 +1,124 @@
-/* Основні налаштування */
 :root {
-    --bg-color: #050505;
-    --text-color: #e0e0e0;
-    --primary-color: #00ffcc; /* Неоновий бірюзовий */
-    --accent-color: #00ccff;
-    --terminal-bg: #000;
-    --font-main: 'Courier New', Courier, monospace;
-}
-
-html {
-    scroll-behavior: smooth;
+    --primary: #00ffcc;
+    --dark: #0a0a0a;
+    --gray: #1a1a1a;
+    --text: #ffffff;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-main);
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark);
+    color: var(--text);
+    scroll-behavior: smooth;
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-/* Навігація */
-header {
-    background-color: rgba(10, 10, 10, 0.95);
-    border-bottom: 1px solid #222;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+/* Navbar */
+nav {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
 }
 
 .logo {
-    color: var(--primary-color);
-    font-size: 1.8em;
-    margin: 0;
-    text-shadow: 0 0 10px var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-nav a {
+.logo span { color: var(--primary); }
+
+.nav-links a {
     color: #888;
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 30px;
     transition: 0.3s;
-    font-size: 0.9em;
 }
 
-nav a:hover {
-    color: #fff;
+.nav-links a:hover { color: var(--primary); }
+
+.nav-btn {
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: var(--primary) !important;
 }
 
-/* Головна секція (Hero) */
-.hero-section {
-    padding: 150px 0 80px 0; /* Відступ через фіксований хедер */
+/* Hero Section */
+.hero {
+    padding: 100px 0;
     text-align: center;
 }
 
-.badge {
-    display: inline-block;
-    background-color: rgba(0, 255, 204, 0.1);
-    color: var(--primary-color);
-    padding: 5px 15px;
-    border-radius: 20px;
-    border: 1px solid var(--primary-color);
-    font-size: 0.8em;
+.hero h1 {
+    font-size: 4rem;
     margin-bottom: 20px;
 }
 
-.hero-content h2 {
-    font-size: 3em;
-    color: #fff;
-    margin: 0 0 20px 0;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+.hero h1 span { color: var(--primary); }
+
+.hero p {
+    font-size: 1.2rem;
+    color: #aaa;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
 }
 
-.hero-content p {
-    font-size: 1.1em;
-    color: #999;
-    max-width: 700px;
-    margin: 0 auto 50px auto;
-}
-
-/* Кнопка Завантаження */
-.download-container {
-    margin: 40px 0;
-}
-
-.download-btn {
+/* Download Button */
+.main-download-btn {
     display: inline-flex;
     align-items: center;
-    background-color: var(--primary-color);
+    background: var(--primary);
     color: #000;
-    padding: 18px 45px;
-    border-radius: 8px;
     text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 10px;
     transition: 0.3s;
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
 }
 
-.download-btn i {
-    font-size: 2em;
+.main-download-btn i {
+    font-size: 2.5rem;
     margin-right: 20px;
 }
 
-.download-btn .btn-text {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+.main-download-btn .text { text-align: left; }
+.main-download-btn .big { display: block; font-weight: bold; font-size: 1.4rem; }
+.main-download-btn .small { font-size: 0.8rem; opacity: 0.8; }
+
+.main-download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
 }
 
-.download-btn .top-text {
-    font-weight: bold;
-    font-size: 1.3em;
+/* Features */
+.features { padding: 80px 0; }
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.download-btn .bottom-text {
-    font-size: 0.7em;
-    opacity: 0.7;
-}
-
-.download-btn:hover {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
-}
-
-/* Секція Демо */
-.demo-section {
-    padding: 50px 0;
-}
-
-.terminal-window {
-    background-color: var(--terminal-bg);
-    border: 1px solid #333;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.terminal-header {
-    background-color: #1a1a1a;
-    padding: 10px;
-    border-bottom: 1px solid #333;
-    display: flex;
-    align-items: center;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-.red { background-color: #ff5f56; }
-.yellow { background-color: #ffbd2e; }
-.green { background-color: #27c93f; }
-
-.title {
-    color: #999;
-    font-size: 0.8em;
-    margin-left: 10px;
-}
-
-.terminal-body {
-    padding: 20px;
-    color: var(--primary-color);
-    font-size: 0.9em;
-    height: 200px;
-    overflow-y: auto;
-}
-
-.bot-msg { margin: 0 0 8px 0; }
-
-/* Футер */
-footer {
+.feature-card {
+    background: var(--gray);
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
-    padding: 50px 0;
-    color: #555;
-    border-top: 1px solid #222;
-    margin-top: 80px;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    color: #555;
-    text-decoration: none;
-    font-size: 1.5em;
-    margin: 0 15px;
+    border: 1px solid transparent;
     transition: 0.3s;
 }
 
-.social-links a:hover {
-    color: var(--primary-color);
-}
+.feature-card:hover { border-color: var(--primary); }
+.feature-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+footer { padding: 50px 0; text-align: center; border-top: 1px solid var(--gray); color: #555; }
